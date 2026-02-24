@@ -43,19 +43,19 @@
         <!-- First Status -->
         <div class="bg-white p-5 rounded-lg shadow-md">
           <p class="font-medium">Total</p>
-          <p id="total" class="text-[#002C5C] font-bold text-2xl">0</p>
+          <p id="totalCount" class="text-[#002C5C] font-bold text-2xl">0</p>
         </div>
 
         <!-- Second Status -->
         <div class="bg-white p-5 rounded-lg shadow-md">
           <p class="font-medium">Interview</p>
-          <p id="interview" class="text-[#10B981] font-bold text-2xl">0</p>
+          <p id="interviewCount" class="text-[#10B981] font-bold text-2xl">0</p>
         </div>
 
         <!-- Third Status -->
         <div class="bg-white p-5 rounded-lg shadow-md">
           <p class="font-medium">Rejected</p>
-          <p id="rejected" class="text-[#EF4444] font-bold text-2xl">0</p>
+          <p id="rejectedCount" class="text-[#EF4444] font-bold text-2xl">0</p>
         </div>
       </div>
     </header>
@@ -67,29 +67,29 @@
           Available Jobs
         </h3>
         <p class="font-medium text-[#64748B]">
-          <span id="job-count">0</span> jobs
+          <span id="dashboardJobCount">0</span> jobs
         </p>
       </div>
 
       <div class="mb-6 flex gap-2.5">
         <button
           onclick="toggleStyle('all-filter-btn')"
-          class="bg-[#3B82F6] shadow-sm text-white font-semibold px-8 py-2.5 rounded-sm"
           id="all-filter-btn"
+          class="bg-[#3B82F6] shadow-sm text-white font-semibold px-8 py-2.5 rounded-sm cursor-pointer"
         >
           All
         </button>
         <button
           onclick="toggleStyle('interview-filter-btn')"
-          class="bg-white shadow-sm text-[#64748B] font-medium px-3.5 py-2.5 rounded-sm"
           id="interview-filter-btn"
+          class="bg-white shadow-sm text-[#64748B] font-medium px-3.5 py-2.5 rounded-sm cursor-pointer"
         >
           Interview
         </button>
         <button
           onclick="toggleStyle('rejected-filter-btn')"
-          class="bg-white shadow-sm text-[#64748B] font-medium px-3.5 py-2.5 rounded-sm"
           id="rejected-filter-btn"
+          class="bg-white shadow-sm text-[#64748B] font-medium px-3.5 py-2.5 rounded-sm cursor-pointer"
         >
           Rejected
         </button>
@@ -579,5 +579,8 @@
         </div>
       </section>
     </main>
+
+    <!-- Javascript -->
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
