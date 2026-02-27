@@ -16,10 +16,25 @@
       rel="stylesheet"
     />
 
-    <style>
-      * {
-        font-family: "Geist", sans-serif;
-        font-optical-sizing: auto;
+    <!-- Custom CSS -->
+    <style type="text/tailwindcss">
+      @theme {
+        --font-geist: "Geist", sans-serif;
+        --color-navy: #002c5c;
+        --color-teal: #10b981;
+        --color-coral: #ef4444;
+        --animate-fade-up: fadeUp 0.3s ease forwards;
+
+        @keyframes fadeUp {
+          0% {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       }
     </style>
 
@@ -32,11 +47,11 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F8FAFC] min-h-screen">
+  <body class="bg-[#F8FAFC] min-h-screen font-geist">
     <!-- Header Section -->
     <header class="px-5 py-6 md:max-w-6xl mx-auto">
       <h1
-        class="text-2xl md:text-3xl font-bold md:font-extrabold text-[#002C5C] tracking-tight"
+        class="text-2xl md:text-3xl font-bold md:font-extrabold text-navy tracking-tight"
       >
         Job Application Tracker
       </h1>
@@ -55,7 +70,7 @@
             </p>
             <p
               id="total-count"
-              class="text-2xl md:text-3xl font-bold md:font-extrabold text-[#002C5C]"
+              class="text-2xl md:text-3xl font-bold md:font-extrabold text-navy"
             >
               0
             </p>
@@ -68,7 +83,7 @@
             </p>
             <p
               id="interview-count"
-              class="text-2xl md:text-3xl font-bold md:font-extrabold text-[#10B981]"
+              class="text-2xl md:text-3xl font-bold md:font-extrabold text-teal"
             >
               0
             </p>
@@ -81,7 +96,7 @@
             </p>
             <p
               id="rejected-count"
-              class="text-2xl md:text-3xl font-bold md:font-extrabold text-[#EF4444]"
+              class="text-2xl md:text-3xl font-bold md:font-extrabold text-coral"
             >
               0
             </p>
@@ -141,7 +156,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     Mobile First Corp
                   </p>
@@ -156,7 +171,7 @@
                     <span>$130,000 - $175,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -166,12 +181,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -180,7 +195,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -194,7 +209,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     WebFlow Agency
                   </p>
@@ -209,7 +224,7 @@
                     <span>$80,000 - $120,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -220,12 +235,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -234,7 +249,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -248,7 +263,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     DataViz Solutions
                   </p>
@@ -263,7 +278,7 @@
                     <span>$125,000 - $165,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -274,12 +289,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -288,7 +303,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -302,7 +317,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     CloudFirst Inc
                   </p>
@@ -317,7 +332,7 @@
                     <span>$140,000 - $190,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -328,12 +343,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -342,7 +357,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -356,7 +371,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     Innovation Labs
                   </p>
@@ -371,7 +386,7 @@
                     <span>$110,000 - $150,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -382,12 +397,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -396,7 +411,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -410,7 +425,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     MegaCorp Solutions
                   </p>
@@ -425,7 +440,7 @@
                     <span>$130,000 - $170,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -436,12 +451,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -450,7 +465,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -464,7 +479,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     StartupXYZ
                   </p>
@@ -479,7 +494,7 @@
                     <span>$120,000 - $160,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -490,12 +505,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -504,7 +519,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -518,7 +533,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     TechCorp Industries
                   </p>
@@ -533,7 +548,7 @@
                     <span>$130,000 - $175,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -544,12 +559,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -558,7 +573,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -572,7 +587,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     BrightPixel Labs
                   </p>
@@ -587,7 +602,7 @@
                     <span>$70,000 - $95,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -598,12 +613,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -612,7 +627,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -626,7 +641,7 @@
               <div class="flex justify-between items-start gap-4">
                 <div class="flex-1 min-w-0">
                   <p
-                    class="font-semibold md:font-bold text-[#002C5C] text-base md:text-lg lg:text-xl mb-0.5"
+                    class="font-semibold md:font-bold text-navy text-base md:text-lg lg:text-xl mb-0.5"
                   >
                     CloudOps Solutions
                   </p>
@@ -641,7 +656,7 @@
                     <span>$100,000 - $135,000</span>
                   </p>
                   <div
-                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-[#002C5C]"
+                    class="status-label mb-3 inline-block text-sm font-medium tracking-widest uppercase px-3 py-2 rounded-sm bg-[#EEF4FF] text-navy"
                   >
                     Not Applied
                   </div>
@@ -652,12 +667,12 @@
                   </p>
                   <div class="flex flex-wrap gap-2">
                     <button
-                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#10B981] text-[#10B981] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#10B981] hover:text-white"
+                      class="interview-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-teal text-teal bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-teal hover:text-white"
                     >
                       Interview
                     </button>
                     <button
-                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-[#EF4444] text-[#EF4444] bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-[#EF4444] hover:text-white"
+                      class="rejected-btn text-sm font-semibold px-4 py-2 rounded-md border-2 border-coral text-coral bg-transparent cursor-pointer transition-all duration-150 uppercase hover:bg-coral hover:text-white"
                     >
                       Rejected
                     </button>
@@ -666,7 +681,7 @@
 
                 <!-- Delete Button -->
                 <button
-                  class="delete-btn hover:text-[#EF4444] transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
+                  class="delete-btn hover:text-coral transition-colors duration-150 py-2 px-3 cursor-pointer shrink-0 bg-[#F1F2F4] rounded-full text-black"
                 >
                   <i class="fa-regular fa-trash-can pointer-events-none"></i>
                 </button>
@@ -677,13 +692,13 @@
           <!-- Interview Section -->
           <section
             id="interview-container"
-            class="hidden flex flex-col gap-2"
+            class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"
           ></section>
 
           <!-- Rejected Section -->
           <section
             id="rejected-container"
-            class="hidden flex flex-col gap-2"
+            class="hidden grid grid-cols-1 md:grid-cols-2 gap-4"
           ></section>
         </section>
 
@@ -706,6 +721,6 @@
     </div>
 
     <!-- Javascript -->
-    <!-- <script src="./new/script.js"></script> -->
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
